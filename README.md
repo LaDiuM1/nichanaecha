@@ -16,7 +16,7 @@
     
     
 **3. PPT**<br/>
-https://www.canva.com/design/DAFw1N1IRmY/uKOcP44C3oUvHY1uIBMHcw/edit?utm_content=DAFw1N1IRmY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton<br/>
+https://www.canva.com/design/DAFtqyfjBf8/9pS64R3iBobPEi9L3_VU0g/view?utm_content=DAFtqyfjBf8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink<br/>
 <br/>
 
 **4. 시연 영상**<br/>
