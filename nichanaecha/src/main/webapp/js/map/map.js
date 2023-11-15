@@ -21,12 +21,12 @@ var optionsData = {
 			"소형"
 		],
 		fuelType: [
-		"휘발유",
-		"디젤",
-		"LPG",
-		"하이브리드",
-		"전기",
-		"수소"
+			"휘발유",
+			"디젤",
+			"LPG",
+			"하이브리드",
+			"전기",
+			"수소"
 	]
 	},
 	year: {
@@ -261,13 +261,13 @@ kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
 
 function getInfo() {
     
-    // 지도의 현재 레벨을 얻어옵니다
+    // 지도의 현재 레벨
     var level = map.getLevel();
     
-    // 지도의 현재 영역을 얻어옵니다 
+    // 지도의 현재 영역 
     var bounds = map.getBounds();
     
-    // 영역의 남서쪽 좌표를 얻어옵니다 
+    // 영역의 남서쪽 좌표 
     var swLatLng = bounds.getSouthWest(); 
     
     // 영역의 북동쪽 좌표를 얻어옵니다 
@@ -564,7 +564,7 @@ var geocoder = new kakao.maps.services.Geocoder();
 
 let inputValue = document.querySelector('.adsSearch').value
 
-// 주소로 좌표를 검색합니다
+// 주소로 좌표를 검색
 geocoder.addressSearch(inputValue, function(result, status) {
 	
 	// 마커 배열에 담긴 마커들 순회하며 null 대입하여 초기화
@@ -576,25 +576,24 @@ geocoder.addressSearch(inputValue, function(result, status) {
     if (status === kakao.maps.services.Status.OK) {
 		 
 		var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-		
+	    
 		 var callback = function(result, status) {
-           if (status === kakao.maps.services.Status.OK) {
-			   map.setLevel(5);
+		 map.setLevel(5);
 
-			   var address = result[0].address.region_2depth_name;
+		 var address = result[0].address.region_2depth_name;
 
-			   var content = `
+		 var content = `
                     <div class="adsOverlay">
                         <span class="marker-title">${address}</span>
                     </div>`;
 
-			   var customOverlay = new kakao.maps.CustomOverlay({
-				   map: map,
-				   position: coords,
-				   content: content,
-				   xAnchor: 1,
-				   yAnchor: 1
-			   });
+		var customOverlay = new kakao.maps.CustomOverlay({
+			 map: map,
+			 position: coords,
+			 content: content,
+			 xAnchor: 1,
+			 yAnchor: 1
+		   });
 
                customOverlay.setZIndex(3);
 
@@ -610,12 +609,6 @@ geocoder.addressSearch(inputValue, function(result, status) {
                
                adsSearchEvent.value = '';
            }
-           else{
-				alert('정확한 주소를 입력해 주세요.');
-				return;
-			}
-        }
-
         geocoder.coord2Address(result[0].x, result[0].y, callback);
     }
 	 else {
